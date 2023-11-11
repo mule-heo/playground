@@ -1,23 +1,44 @@
-import { For } from 'solid-js';
-import type { Component } from 'solid-js';
-import { A } from '@solidjs/router';
-import Card from './components/card/Card';
 import styles from './app.module.css';
-import { contents } from './data/contents';
+import type { Component } from 'solid-js';
+import { lazy } from 'solid-js';
+import { Router, Route, Routes } from '@solidjs/router';
+import { ErrorBoundary } from 'solid-js';
+import { Suspense } from 'solid-js';
+import Footer from './components/footer/Footer';
+
+const Main = lazy(() => import('./pages/main/Main'));
+const Page = lazy(() => import('./pages/Page'));
+const Error = lazy(() => import('./pages/error/Error'));
 
 const App: Component = () => {
   return (
-    <div class={styles.Container}>
-      <section class="w-1/2 sm:w-96 md:w-192 flex flex-wrap justify-center my-8 gap-8">
-        <For each={contents}>
-          {content => (
-            <A href={`/${content.url}`}>
-              <Card {...content} />
-            </A>
-          )}
-        </For>
-      </section>
-    </div>
+    <Router>
+      <div class={styles.Container}>
+        <Routes>
+          <Route
+            path="/"
+            component={() => (
+              <ErrorBoundary fallback={err => <Error message={err.message} />}>
+                <Suspense fallback={<p>불러오는 중입니다...</p>}>
+                  <Main />
+                </Suspense>
+              </ErrorBoundary>
+            )}
+          />
+          <Route
+            path="/:dataStructure"
+            component={() => (
+              <ErrorBoundary fallback={err => <Error message={err.message} />}>
+                <Suspense fallback={<p>불러오는 중입니다...</p>}>
+                  <Page />
+                </Suspense>
+              </ErrorBoundary>
+            )}
+          />
+        </Routes>
+      </div>
+      <Footer />
+    </Router>
   );
 };
 
