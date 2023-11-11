@@ -13,7 +13,3 @@ html {
 	min-height: 100vh;
 	@apply bg-gray-700;
 }
-
-* {
-	transition: 0.3s;
-}
