@@ -1,0 +1,7 @@
+.Container {
+  min-height: calc(100vh - 36px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -2,8 +2,18 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	@apply text-gray-100;
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+	min-height: 100vh;
+	@apply bg-gray-700;
+}
+
+* {
+	transition: 0.3s;
+}
