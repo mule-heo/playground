@@ -27,10 +27,10 @@ const Stack = () => {
           <div class="h-34 w-36 text-center border">{count() + 1}</div>
         </section>
         <section class="flex flex-col justify-center items-end gap-4">
-          <section class="flex flex-col-reverse items-center h-96 w-52 border-solid border-white border border-t-0 mr-6">
+          <section class="flex flex-col-reverse items-center h-96 w-52 border-solid border-white border-4 border-t-0 mr-6">
             <Index each={stack()}>
               {el => (
-                <div class="h-8 w-52 border border-b-0 flex justify-center items-center">
+                <div class="h-16 w-52 text-2xl border-4 border-b-0 flex justify-center items-center flex-none">
                   {el()}
                 </div>
               )}
