@@ -15,7 +15,7 @@ const Card: Component<CardProps> = props => {
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      <div class="w-72 h-36 sm:w-36 sm:h-36 mt-2 rounded-2xl overflow-hidden">
+      <div class="w-72 h-36 sm:w-36 sm:h-36 mt-2 rounded-2xl overflow-hidden select-none">
         <img
           class="object-cover w-72 h-36 sm:w-36 sm:h-36"
           src={`${
@@ -27,7 +27,7 @@ const Card: Component<CardProps> = props => {
           alt={props.name}
         />
       </div>
-      <p class="mt-3">{props.name}</p>
+      <p class="mt-3 select-none">{props.name}</p>
     </article>
   );
 };
