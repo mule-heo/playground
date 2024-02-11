@@ -1,0 +1,11 @@
+.Card {
+  @apply w-80 h-52 bg-gray-600 sm:w-40 sm:h-52 rounded-2xl flex flex-col justify-start items-center duration-300;
+  &:hover{
+    filter: drop-shadow(0 0 3px white);
+    box-shadow: 0 0 10px rgba(127, 127, 200, 0.8);
+    transform: scale(1.05);
+  }
+  & *{
+    transition: 0.3s;
+  }
+}
