@@ -11,12 +11,12 @@
 
 ## 배포 링크
 
-https://playground-psuoot1te-mule-heo.vercel.app/
+https://playground-mule-heo.vercel.app
 
 ## 콘텐츠
 
-- [스택](https://playground-psuoot1te-mule-heo.vercel.app/stack)
-- [큐](https://playground-psuoot1te-mule-heo.vercel.app/queue)
+- [스택](https://playground-mule-heo.vercel.app/stack)
+- [큐](https://playground-mule-heo.vercel.app/queue)
 
 ## 저작권의 적용을 받는 콘텐츠
 
