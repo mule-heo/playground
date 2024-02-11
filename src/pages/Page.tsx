@@ -2,12 +2,16 @@ import { A, useLocation } from '@solidjs/router';
 import styles from './page.module.css';
 import { routes } from '../data/routing';
 
+function isKeyofRoutes(value: unknown): asserts value is keyof typeof routes {
+  if (typeof value !== 'string' || !(value in routes))
+    throw new Error('존재하지 않는 페이지입니다.');
+}
+
 const Page = () => {
   const location = useLocation();
-  const Children = routes[location.pathname];
-  if (Children === undefined) {
-    throw new Error('존재하지 않는 경로입니다.');
-  }
+  const pathname = location.pathname;
+  isKeyofRoutes(pathname);
+  const Children = routes[pathname];
   return (
     <>
       <A href="/">
