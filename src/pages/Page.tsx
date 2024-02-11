@@ -11,7 +11,11 @@ const Page = () => {
   return (
     <>
       <A href="/">
-        <p class={`absolute top-1 left-1 text-xl ${styles.TextShadow}`}>메인</p>
+        <p
+          class={`absolute top-1 left-1 text-xl ${styles.TextShadow} italic text-base`}
+        >
+          메인
+        </p>
       </A>
       <Children />
     </>
