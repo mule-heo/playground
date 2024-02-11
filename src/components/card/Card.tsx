@@ -1,6 +1,6 @@
 import { Component, createSignal } from 'solid-js';
 import styles from './card.module.css';
-import conieImage from '../assets/images/conie.png';
+import conieImage from '../../assets/images/conie.png';
 
 interface CardProps {
   name: string;
